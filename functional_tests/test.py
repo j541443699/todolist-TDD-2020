@@ -9,8 +9,8 @@ import time
 
 class NewVisitorTest(LiveServerTestCase):
 
-    def setUp(self):  # (3)
-        self.browser = webdriver.Firefox()
+    def setUp(self):  # 在所有test之前执行
+        self.browser = webdriver.Firefox() # 浏览器
 
     def tearDown(self):  # (3)
         self.browser.quit()
@@ -28,7 +28,7 @@ class NewVisitorTest(LiveServerTestCase):
                     raise e
                 time.sleep(0.5)
 
-    def test_can_start_a_list_and_retrieve_it_later(self):  # (2)
+    def test_can_start_a_list_for_one_user(self):  # (2)
         # Edith has heard about a cool new online to-do app. She goes
         # to check out its hamepage
         self.browser.get(self.live_server_url)
