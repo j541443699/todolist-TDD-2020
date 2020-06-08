@@ -11,7 +11,8 @@ class NewVisitorTest(StaticLiveServerTestCase):
 
     def setUp(self):  # 在所有test之前执行
         self.browser = webdriver.Firefox() # 浏览器
-        staging_server = os.environ.get('STAGING_SERVER')
+        # staging_server = os.environ.get('STAGING_SERVER')
+        staging_server = '123.57.138.70'
         if staging_server:
             self.live_server_url = 'http://' + staging_server
 
