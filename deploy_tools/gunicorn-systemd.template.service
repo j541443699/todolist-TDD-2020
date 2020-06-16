@@ -1,0 +1,11 @@
+[Unit]
+Description=Gunicorn server for SITEIP/SITENAME
+
+[Service]
+Restart=on-failure
+User=root
+WorkingDirectory=/home/jyq/data/TDD-2020/sites/SITEIP/source
+ExecStart=/home/jyq/data/TDD-2020/sites/SITEIP/virtualenv/bin/gunicorn --bind unix:/tmp/SITEIP.socket superlists.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
